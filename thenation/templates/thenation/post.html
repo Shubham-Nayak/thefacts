@@ -1,0 +1,200 @@
+{% extends "thenation/basic.html" %}
+{%block css%}
+<style>
+    .post .td-category a {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .td-category a {
+        background-color: #cf461f;
+        font-weight: 600;
+    }
+
+    .td-category a {
+        color: #fff;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: bold;
+        background-color: #000;
+        padding: 5px 6px 4px 6px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    .td-category a {
+        color: #fff;
+        background-color: #222222;
+        padding: 3px 6px 4px 6px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    header .td-module-meta-info {
+        margin-bottom: 16px;
+    }
+
+    .td-module-meta-info {
+        font-family: 'Open Sans', arial, sans-serif;
+        font-size: 11px;
+        margin-bottom: 7px;
+        line-height: 1;
+        min-height: 17px;
+    }
+
+    html * {
+        font-family: Faustina, Georgia, serif;
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+    }
+
+    .name {
+        color: green;
+        font-size: 22px;
+        text-transform: capitalize;
+    }
+
+    .update_date {
+        font-size: 20px;
+        color: #cf461f;
+        float: right;
+        margin-top: 0;
+    }
+
+    .title {
+        opacity: 0.5px;
+        color: gray;
+    }
+
+    .heading1 {
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .container {
+       
+        
+    }
+
+    .heading1 {
+        font-size: 52px;
+        font-family: 'PT Serif', serif;
+    }
+
+    .heading2 {
+        font-size: 44px;
+        color: #cf461f;
+        text-align: center;
+        font-family: 'PT Serif', serif;
+        padding: 0px;
+    }
+
+    .img-fluid {
+        width: 750px;
+        height: 450px;
+        background-color: red;
+        border:0.1px solid gray;
+    }
+
+    p {
+        margin-top: 5px;
+        font-family: 'Hind', sans-serif;
+        font-size: 20px;
+    }
+
+    pre {
+        margin-top: 5px;
+        font-family: 'Hind', sans-serif;
+        font-size: 20px;
+    }
+
+    .fb-like {
+        float: right;
+    }
+
+    .fb-comments {
+        justify-content: center;
+        display: flex;
+        background-color:whitesmoke;
+       
+
+    }
+
+    .badge {
+        font-size: 15px;
+    }
+
+
+</style>
+{%endblock%}
+{%block body%}
+
+<h1 class="heading1 mt-2">{{blogs.heading1}}</h1>
+
+<div class="container-fluid">
+
+    <div class="container post ">
+        <a href="#" class="badge badge-primary ">{{blogs.catagory}}</a>
+        <div class="td-crumb-container title">{{blogs.title}}<div class="fb-like" data-href="https://getbootstrap.com"
+                data-width="" data-layout="button_count" data-layout="standard" data-action="like" data-size="large"
+                data-show-faces="true"></div>
+        </div>
+        <div class="td-pb-span12">
+            <div class="td-post-header">
+
+                <div class="td-module-meta-info">
+                    <p> <a href="/accounts/userposts/{{blogs.id}}" class="author url fn name" rel="author">Writen By:
+                            {{blogs.name}}</a> <span class="update_date">Updated: {{blogs.time}} IST</span></p>
+                </div>
+
+            </div>
+            <figure></figure><img class="img-fluid  mx-auto d-block" src="/media/{{blogs.images}}"
+                title="Latest news on Education | theprint.in">
+            <figcaption class="wp-caption-text">{{blogs.desc}}</figcaption>
+            </figure>
+
+        </div>
+        <p><b>News: </b>{{blogs.content1}}</p>
+        <!--<div class="fb-like" data-href="http://127.0.0.1:8000/thenation/post/{{blogs.id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div><br>-->
+
+
+    </div>
+
+
+    <hr>
+    <h1 class="heading2">{{blogs.heading2}}</h1>
+    <p style="color:white;background:black; border-bottom: 5px solid red;text-align: center;">{{blogs.title}}</p>
+    <div class="container">
+        <div class="second_heaging">
+            <img class="img-fluid  mx-auto d-block" src="/media/{{blogs.thumbnils}}" />
+        </div>
+        <div class="content">
+            <p><b>News:</b> {{blogs.content2}}
+            </p>
+        </div>
+    <p style="color:white;background-color:black;text-align-center;">You Can Check Data Through Links Mention Above</p>
+            <a href="{{blogs.links}}">Artical Related Links </a>
+        <div class="sharethis-inline-share-buttons"></div>
+    </div>
+
+
+
+
+
+</div>
+<div class="container ">
+    <div class="fbcomment mt-2 d-flex justify-content-center">
+        <div class="fb-comments " data-href="http://127.0.0.1:8000/thenation/post/{{blogs.id}}" data-width=""
+            data-numposts="5"></div>
+    </div>
+</div>
+
+
+{%endblock%}
