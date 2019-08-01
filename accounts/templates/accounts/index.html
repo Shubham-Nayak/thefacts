@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>{%block title%}Hello, world!{%endblock%}</title> {% load static %}
+    {%block css%}<style> body{
+      background-image: url( '{% static "thenation/dashbordbg.png" %}');
+      background-color: rgba(255,255,255,0.9);
+    
+      background-repeat: no-repeat;
+     background-size: cover;
+     
+  }
+  body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+  }
+  .btn{
+    width: 250px;
+    height: 100px;;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.2;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 120px;
+    
+    border-radius: 25px;
+  
+    background: #9152f8;
+    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+    background: linear-gradient(bottom, #7579ff, #b224ef);
+    position: relative;
+    z-index: 1;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    
+  }
+  .btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    opacity: 1;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .btn:hover {
+    color: #fff;
+  }
+  
+  .btn:hover:before {
+    opacity: 0;
+  }
+  h1{
+    color: white;
+    text-align: center
+  }
+  .row{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+</style> {%endblock%}
+  </head>
+  
+  <body>
+     
+     
+      
+      {%block body%}
+      
+      <div class="container mt-5">
+          <h1 class="animation bounceIn"> <span style="font-size: 80px;font-family:  bold">T</span>he <span style="font-size: 80px;font-family:  bold">N</span>ews <span style="font-size: 80px;font-family:  bold">N</span>ation</h1>
+          <div class="row">
+      {% if user.is_authenticated %}
+      <a href="javascript:{document.getElementById('logout').submit()}" class="nav-item nav-link"><button class="btn btn-primary">Logout</button></a>
+      <form action="/accounts/logout/" method="POST" id="logout" >
+        {% csrf_token %}
+        <input type="hidden"/>
+      </form>
+     
+
+      {%else%}
+
+     
+      <a href="/accounts/login/" class="nav-item nav-link"><button class="btn btn-primary">Login</button></a>
+      <a href="/accounts/signup/" class="nav-item nav-link"><button class="btn btn-primary">Signup</button></a>
+      {%endif%}
+</div>
+    
+    {%endblock%}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+    
+{%block js%}
+<script></script>
+{%endblock%}
+</body>
+</html>

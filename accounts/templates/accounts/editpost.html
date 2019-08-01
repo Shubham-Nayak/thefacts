@@ -1,0 +1,54 @@
+{%extends "thenation/basic.html"%}
+
+{% block title%} Articals{%endblock%}
+
+{% block body%}
+<h1 class="center" style="text-align:center;"> Write Artical <span>But Read Carefully Before Submiting</span></h1>
+<div class=" container">
+        <form method="POST" action="/accounts/update/{{data.id}}" enctype="multipart/form-data">{% csrf_token %}
+            <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Title</label>
+                    <input type="text" class="form-control" id="inputEmail4" value="{{data.title}}"  name="title" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZip">Heading 1</label>
+                <input type="text" class="form-control" id="inputPhone" name="heading1"  value="{{data.heading1}}">
+            </div>
+            <div class="form-group">
+                <label for="inputZip">Content 1</label>
+                <textarea name="content1" id="query" cols="30" rows="10"  class="form-control"    placeholder="{{data.content1}}"></textarea>
+            </div>
+            <div class="form-group">
+                    <label for="inputZip">Heading 2</label>
+                    <input type="text" class="form-control" id="inputPhone" name="heading2"  value="{{data.heading2}} " >
+                </div>
+                <div class="form-group">
+                    <label for="inputZip">Content 2</label>
+                    <textarea name="content2" id="query" cols="30" rows="10"  class="form-control"    placeholder="{{data.content2}}" ></textarea>
+                </div>
+                <div class="form-group">
+                        <label for="inputZip">Links Related This Blog</label>
+                        <input type="text" class="form-control" id="inputPhone" name="links"  value="{{data.links}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputZip">Category</label>
+                        <input type="text" class="form-control" id="inputPhone" name="category" required="required">
+                    </div>
+                   
+
+                        <div class="form-group">
+                                <label for="inputZip">Change Main Content Image</label>
+                                <input type="FILE" class="form-control" id="inputPhone" name="image"  value="/media/{{data.images}}" >
+                            </div>
+                            <div class="form-group">Change ThubnilsThumbnils</label>
+                                    <input type="FILE" class="form-control" id="inputPhone" name="thumbnils" >
+                                </div>
+            <button type="submit" class="btn btn-primary" id="done" value="Submit" onclick="alerts()">Submit</button>
+        </form>
+
+</div>
+
+{%endblock%}
