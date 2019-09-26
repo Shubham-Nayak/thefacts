@@ -1,0 +1,23 @@
+{%extends "thenation/basic.html"%}
+
+{%block title%}Admin APge{%endblock%}
+
+{%block body%}
+
+<form method="POST" action="/thenation/admin/" enctype="multipart/form-data">{% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputname">Discription</label>
+            <input type="name" class="form-control" id="desc" placeholder="Discription " name="desc" required="required">
+        </div>
+        <div class="form-group col-md-6">
+                <label for="inputname" id="customFile">Images</label>
+                <input type="file"  class="form-control"  name="image">
+                
+        </div>
+        <button type="submit" class="btn btn-primary" id="done" value="Submit" onclick="alerts()">Submit</button>
+    </div>
+</form>
+
+<a href="/thenation/admin/" class="btn btn-primary mt-2">Back To Dashbord</a>
+{%endblock%}

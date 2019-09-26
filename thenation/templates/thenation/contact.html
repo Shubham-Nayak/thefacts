@@ -1,0 +1,38 @@
+{%extends "thenation/basic.html"%}
+
+{%block title%}Contact Us{%endblock%}
+
+{%block body%}
+
+
+<div class="col " style="margin-top: 85px;">
+    <h2>Step 2 - Enter Address & Other Details:</h2>
+    {{error}}
+    <form method="post" action="/thenation/contact/" onsubmit="alert('Query Submited...')">{% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="Enter Name" required=required>
+          <small id="emailHelp" class="form-text text-muted">Enter Your Full Name..</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required=required>
+        </div>
+        <div class="form-group ">
+            <label for="exampleInputPassword1">Phone number</label>
+          <input type="tel" class="form-control" id="exampleInputEmail1" name="phone" aria-describedby="emailHelp" placeholder="Enter Phone Number" required=required>
+        </div>
+        <div class="form-group ">
+            <label for="exampleInputPassword1">Enter Your Query Or Feedback..</label>
+            <textarea name="query" class="form-control" id="" cols="10" rows="5" placeholder="Enter Your Query.." required=required></textarea >
+        </div>
+        
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+</div>
+
+{%endblock%}
+
+{%block js%}
+
+{%endblock%}

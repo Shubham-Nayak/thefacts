@@ -1,0 +1,20 @@
+{%extends "thenation/basic.html" %}
+{%block title%}Dashboard{%endblock%}
+}
+{%block css%}{%load static%}
+<style>
+
+    body{
+        background-image: url( '{% static "thenation/dashbordbg.png" %}');
+        background-repeat: no-repeat;
+       background-size: cover;
+       
+    }
+</style>
+{%endblock%}
+{%block body%}
+<p>hiii</p>
+<a href="/thenation/addslide/" class="btn btn-primary"> Add Slides</a>
+<a href="/thenation/articals/" class="btn btn-primary"> Add Articals</a>
+
+{%endblock%}

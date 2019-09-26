@@ -1,0 +1,17 @@
+{%extends "thenation/basic.html"%}
+
+{% block title%} Articals{%endblock%}
+
+{% block body%}
+<h1 class="center" style="text-align:center;"> Write Artical <span>But Read Carefully Before Submiting</span></h1>
+<div class=" container">
+        <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+            <div class="form-row">
+                
+              {{form}}
+            <button type="submit" class="btn btn-primary" id="done" value="Submit" onclick="alerts()">Submit</button>
+        </form>
+
+</div>
+
+{%endblock%}

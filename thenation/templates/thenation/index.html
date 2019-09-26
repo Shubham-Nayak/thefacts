@@ -1,0 +1,848 @@
+{%extends 'thenation/basic.html'%}
+
+
+{%block title%}The Fact's 24 | India's First Fact Checker News Portal{%endblock%}
+{%block css%}<style>
+  .mySlides {
+    display: none;
+    width: 100%;
+    max-height: 500px;
+
+
+  }
+
+  .w3-content {
+    width: 100%;
+    border: 1px black;
+    background-size: cover;
+
+
+
+
+  }
+
+  .FirstBlock {
+    width: 100%;
+    
+  }
+
+  .sticky-container {
+    /*background-color: #333;*/
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    right: -119px;
+    top: 190px;
+    width: 200px;
+
+  }
+
+  .sticky li {
+    list-style-type: none;
+    background-color: #333;
+    color: #efefef;
+    height: 43px;
+    padding: 0px;
+    margin: 0px 0px 1px 0px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+
+  }
+
+  .sticky li:hover {
+    margin-left: -115px;
+    /*-webkit-transform: translateX(-115px);
+		-moz-transform: translateX(-115px);
+		-o-transform: translateX(-115px);
+		-ms-transform: translateX(-115px);
+		transform:translateX(-115px);*/
+    /*background-color: #8e44ad;*/
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+  }
+
+  .sticky li img {
+    float: left;
+    margin: 5px 5px;
+    margin-right: 10px;
+
+  }
+
+  .sticky li p {
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+    line-height: 43px;
+
+  }
+
+  .artical {
+    width: 100%;
+
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .ml15 {
+
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+
+  .ml15 .word {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .footer-distributed {
+    background-image: linear-gradient(to right top, #f2b21e, #f5992f, #f2823e, #e86d4c, #d95b58, #d75558, #d54f58, #d34858, #e1494c, #ec4c3e, #f5532b, #fb5d09);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+
+    padding: 45px 50px;
+    margin-top: 80px;
+  }
+
+  .footer-distributed .footer-left p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* Footer links */
+
+  .footer-distributed p.footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-distributed .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
+
+  .footer-distributed .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+  }
+
+
+
+ 
+
+.mobile-content {display: none;}
+  
+.brekingnews{
+  border-left:10px solid gold;
+  padding: 10px;
+  float: right;
+
+
+}
+.breking{
+  float: left;
+}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -30px}
+	50%  {margin-top: -60px}
+	75%  {margin-top: -90px}
+	100% {margin-top: 0}
+}
+.newss {
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 100%;
+  height: 40px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none;
+  margin-top: 69px;
+  margin-bottom: 0;
+} 
+
+.newss span { height: 40px;
+  float: left;
+  color: #fff;
+  padding: 6px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: 16px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.newss ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 10s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.newss ul li {line-height: 30px; list-style: none }
+
+.newss ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.newss ul:hover { animation-play-state: paused }
+.newss span:hover+ul { animation-play-state: paused }
+
+/* OTHER COLORS */
+
+.red { background: #d23435 }
+.red span { background: #c22b2c }
+
+
+.newsss{
+  display: none;
+}
+.SecondBlock{
+  margin-left: 100px;
+
+}
+.cat{
+  margin-bottom: 0;
+  
+}
+.time{
+  margin-bottom: 0;
+  opacity: 0.7;
+  font-size: 12px;
+
+}
+.titles{
+  font-size: 20px
+}
+.thumb{
+  margin-top: 0;
+  background-color: transparent;
+  margin-left: 10px;
+}
+  /* If you don't want the footer to be responsive, remove these media queries */
+  iframe{
+    margin-bottom: 10px;
+    height: 250px;
+    width: 350px
+    
+  }
+  .live{
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .mobile-content {
+      display: inline;
+    }
+
+    .desktop-content {
+      display: none;
+    }
+   
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+      text-align: center;
+    }
+
+    .footer-distributed .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links {
+      line-height: 1.8;
+    }
+
+    .thumbnils {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      max-width: 64px;
+      max-height: 110px;
+      border-radius: 10px;
+      margin-left: 10px;
+      height: 150px;
+      position: relative;
+      float: left;
+      right: 0;
+    }
+
+    .cat {
+      font-size: 8px;
+     
+    }
+
+    .time {
+      color: gray;
+      font-size: 9px;
+      
+    }
+
+    .media {
+
+      border: 0.1px solid gray;
+      box-shadow: 0px 0px 12px 1px #333;
+      margin-bottom: 19px;
+      border-radius: 10px;
+      max-height: 250px;
+      width: 100%;
+      margin-left: 15px;
+      overflow: hidden;
+    }
+
+    .media-body {
+      margin-left: 10px;
+    }
+   .titles{
+     clear: both;
+     font-weight: bold;
+     font-size: 15px;
+
+   }
+   .content{
+     color:gray;
+     font-size: 10px;
+   }
+   .SecondBlock{
+  
+  margin-left: 10px;
+  }
+  .thumb{
+    border: 0.1px solid gray;
+    background-color: transparent;
+    margin-bottom: 10px;
+   background-color: transparent;
+  
+    width: 100%;
+    margin-left: 15px;
+    overflow: hidden;
+  }
+  iframe{
+    margin-bottom: 10px;
+    
+  }
+.live{
+  text-align: center;
+}
+
+
+   @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -30px}
+	50%  {margin-top: -60px}
+	75%  {margin-top: -90px}
+	100% {margin-top: 0}
+}
+.newsss {
+  display: inline;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 100%;
+  height: 40px;
+  margin: 20px auto;
+  overflow: hidden;
+ 
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none;
+  margin-top: 69px;
+  margin-bottom: 0;
+} 
+
+.newsss span { height: 40px;
+  float: left;
+  color: #fff;
+  padding: 15px;
+  position: relative;
+  top: 1%;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: 8px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.newsss ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 9s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.newsss ul li {line-height: 30px; list-style: none }
+
+.newsss ul li a {
+  color: #fff;
+  text-decoration: none;
+  font: 9px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.newsss ul:hover { animation-play-state: paused }
+.newsss span:hover+ul { animation-play-state: paused }
+
+/* OTHER COLORS */
+
+.red { background: #d23435 }
+.red span { background: #c22b2c }
+
+  }
+
+  @media only screen and (max-width: 768px) {
+   
+
+    .trending,
+    h1 {
+      font-size: 22px;
+
+    }
+
+    .slider {
+      clear: both;
+      content: "";
+      position: relative;
+      width: 100%;
+    }
+
+    .mySlides {
+      max-height: 170px;
+    }
+
+    .updates {}
+
+
+    .ml15 {
+      clear: both;
+      font-size: 15px;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+    @keyframes ticker {
+      0%   {margin-top: 0}
+      25%  {margin-top: -30px}
+      50%  {margin-top: -60px}
+      75%  {margin-top: -90px}
+      100% {margin-top: 0}
+    }
+
+  }
+</style>
+{%endblock%}
+{%load static%}
+{%block body%}
+<div class="newss red fixed-top">
+    <span>Breaking News:  {{ currenttime}}  </span>
+    <ul>
+      {%for i in brekingnews %}
+      <li><a href="#">{{i.title}}</a></li>
+     {%endfor%}
+    </ul>
+  </div>
+  
+<!--For mobile-->
+  <div class="newsss red fixed-top">
+      <span>Breaking News: </span>
+      <ul>
+        {%for i in brekingnews %}
+        <li><a href="#">{{i.title|slice:"0:50"}}</a></li>
+       {%endfor%}
+      </ul>
+    </div>
+
+
+<div class="container-fluid row " style="margin-top:75px;">
+  <div class="FirstBlock col-md-7 col-sm-12 ">
+
+
+    <h1 my-0><span class="badge badge-secondary animation bounceIn sm-1 trending mt-5"
+        style="background: #D6540E;">Trending</span></h1>
+
+    <div class="w3-content  slider ">
+      {%for i in image %}
+
+      <img class="mySlides" src="{{i.images.url}}" style="width:100%;">
+
+      {%endfor%}
+    </div>
+
+    
+
+  </div>
+ 
+
+  <!--first block end-->
+
+  <div class="SecondBlock mt-5  col-md-4 col-sm-12     row ">
+
+    <div class="card mx-5 col-md-10 " style="width: 18rem;">
+      <img src="{{updates.0.images.url}}" class="card-img-top" alt="{{updates.0.images.url}}" >
+      <div class="card-body">
+        <p class="card-text">{{updates.0.content1|slice:"0:80"}}..</p>
+      </div>
+      <a href="/thenation/posts/{{updates.0.title_url}}" class="btn btn-primary " style="background-color:#D39B2C">Read
+        Artical</a>
+    </div>
+
+    <div class="mt-4 col-md-12">
+      <div class="card  text-white ">
+        <a href="/thenation/posts/{{updates.1.title_url}}"> <img src="{{updates.1.images.url}}" class="card-img" alt="..."></a>
+        <div class="card-img-overlay">
+          <h5 class="card-title">{{updates.1.title}}</h5>
+          <a href="/thenation/posts/{{updates.1.title_url}}" style="color:white;">
+            <p class="card-text">{{updates.1.content1|slice:"0:80"}}..</p>
+          </a>
+          <p class="card-text">Last updated: {{updates.1.time}} </p>
+        </div>
+
+      </div>
+
+    </div>
+    <!--secondblog block end-->
+
+  </div>
+  <!--fluid block end-->
+
+
+
+  <div class="container-fluid">
+
+    <hr size="20">
+ 
+
+    <div class="alert alert-dark animate zoonInUp updates" role="alert" style="background-color:#D39B2C">
+      <h1 class="ml15">
+        <span class="wor">Live</span>
+        <span class="wor">Video's</span>
+
+      </h1>
+
+
+    </div>
+
+  </div>
+ 
+<div class="container-fluid">
+ 
+  
+ 
+  
+<div class=" row justify-content-center thumb">
+ 
+  <iframe width="auto" height="auto" src="{{video.0.link}}"  allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+ <iframe width="auto" height="auto" src="{{video.1.link}}"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="auto" height="auto" src="{{video.2.link}}"  allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+    
+  
+
+
+
+</div>
+  </div>
+
+
+<div class="container-fluid">
+
+  <hr size="19">
+
+
+  <div class="alert alert-dark animate zoonInUp updates" role="alert" style="background-color:#D39B2C">
+    <h1 class="ml15">
+      <span class="wor">Today's</span>
+      <span class="wor">Update's</span>
+
+    </h1>
+
+
+  </div>
+
+</div>
+  <!--//////News Artical Code/////-->
+
+  <div class="container desktop-content">
+
+    <div class="row my-2">
+      {%for i in data.object_list%}
+      <div class="col-md-6 ">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative news">
+          <div class="col p-4 d-flex flex-column position-static">
+
+            <p class="card-text cat" style="font-size:15px;">News Category: <span
+                style="color:red;font-size:21px;">{{i.catagory}}</span></p>
+            <p class="card-text time">{{i.time.date}}</p>
+            <h3 class="mb-0 titles">{{i.title|slice:"0:60"}}..</h3>
+            <div class="mb-1 text-muted">{{i.content1|slice:"0:30"}}......</div>
+
+            <a href="/post/{{i.title_url}}" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+
+            <img class="bd-placeholder-img" width="200" height="250" src="{{i.thumbnils.url}}"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      {%endfor%}
+    </div>
+
+
+    <div class="pagination justify-content-center mt-2 ">  
+
+        {% if data.has_previous %}
+        <a class="page-link previous" href="?page={{ data.previous_page_number }}">Previous</a>
+          
+        {% else %}
+          
+        {% endif %}
+        
+        {% if data.number|add:'-2' > 1 %}
+           <a href="?page={{ data.number|add:'-3' }}"></a>
+        {% endif %}
+        
+        {% for i in data.paginator.page_range %}
+            {% if data.number == i %}
+                
+                <a href="" class="page-link active" style="background-color: rgba(170,170,170,0.3);"> <span class="current " ><b>{{ i }}</b></span></a>
+            {% elif i > data.number|add:'-3' and i < data.number|add:'3' %}
+               
+                <a href="?page={{ i }}"  class="page-link"> {{ i }}</a>
+            {% endif %}
+        {% endfor %}
+        
+        {% if data.paginator.num_pages > data.number|add:'2' %}
+            <a  class="page-link" href="?page={{ data.number|add:'2' }}">&hellip;</a>
+        {% endif %}
+        
+        {% if data.has_next %}
+            <a href="?page={{ data.next_page_number }}"  class="page-link"></a>
+        {% else %}
+            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        {% endif %}
+      
+{%if data.has_next %}
+<a class="page-link next"  href="?page={{ data.next_page_number }}">Next</a>
+{% else %}
+<a class="disabled"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+{%endif%}
+
+        
+      </div>
+
+
+
+
+<!--old pagination
+    <div class="pagination justify-content-center mt-5">
+      {%if data.has_previous%}
+
+      <a class="page-link previous" href="?page={{ data.previous_page_number }}">Previous</a>
+
+
+      {%endif%}
+      {% for num in data.paginator.page_range %}
+
+      {% ifequal num data.number %}
+
+      <a href="" class="page-link"> <span class="current "><b>{{ num }}</b></span></a>
+      {% else %}
+      <a href="?page={{ num }}" class="page-link"> {{ num }}</a>
+      {% endifequal %}
+      {% endfor %}
+      {%if data.has_next %}
+      <a class="page-link next" href="?page={{data.next_page_number}}">Next</a>
+      {%endif%}
+
+    </div>
+  -->
+
+
+  </div>
+  
+
+
+  <div class="container mobile-content">
+
+    <div class="row my-2 mb-4">
+      {%for i in data.object_list%}
+
+      <div class="media ">
+
+        <a href="/post/{{i.title_url}}" class="stretched-link"> <img class="align-self-center mr-3 thumbnils "
+            src="{{i.thumbnils.url}}" target="/post/{{i.title_url}}">
+        </a>
+        <div class="media-body">
+          <p class="time card-text">{{i.time}}<span style="color:teal;margin-left:15px;">Category: </span><span style="color: lightsalmon;"
+            >{{i.catagory}}</span></p>
+          <p class="titles ">{{i.title}}</p>
+          <p class="content">{{i.content1|slice:"0:30"}}</p>
+          <a href="/post/{{i.title_url}}" class="stretched-link mt-0 mb-0">Continue reading</a>
+          
+
+        </div>
+      </div>
+
+      {%endfor%}
+    </div>
+
+    <div class="pagination justify-content-center  ">  
+
+        {% if data.has_previous %}
+        <a class="page-link previous" href="?page={{ data.previous_page_number }}">Previous</a>
+          
+        {% else %}
+          
+        {% endif %}
+        
+        {% if data.number|add:'-2' > 1 %}
+           <a href="?page={{ data.number|add:'-3' }}"></a>
+        {% endif %}
+        
+        {% for i in data.paginator.page_range %}
+            {% if data.number == i %}
+                
+                <a href="" class="page-link active" style="background-color: rgba(170,170,170,0.3);"> <span class="current " ><b>{{ i }}</b></span></a>
+            {% elif i > data.number|add:'-3' and i < data.number|add:'3' %}
+               
+                <a href="?page={{ i }}"  class="page-link"> {{ i }}</a>
+            {% endif %}
+        {% endfor %}
+        
+        {% if data.paginator.num_pages > data.number|add:'2' %}
+            <a  class="page-link" href="?page={{ data.number|add:'2' }}">&hellip;</a>
+        {% endif %}
+        
+        {% if data.has_next %}
+            <a href="?page={{ data.next_page_number }}"  class="page-link"></a>
+        {% else %}
+            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        {% endif %}
+      
+{%if data.has_next %}
+<a class="page-link next"  href="?page={{ data.next_page_number }}">Next</a>
+{% else %}
+<a class="disabled"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+{%endif%}
+
+        
+      </div>
+
+
+
+  
+  </div>
+
+  <!--////Sticky share bar code///////-->
+
+  <div class="sticky-container">
+    <ul class="sticky">
+      <li>
+        <img width="32" height="32" title="" alt="" src="{%static 'thenation/images/fb1.png' %}">
+        <p>Facebook</p>
+      </li>
+      <li>
+        <img width="32" height="32" title="" alt="" src="{%static 'thenation/images/tw1.png' %}">
+        <p>Twitter</p>
+      </li>
+
+      <li>
+        <img width="32" height="32" title="" alt="" src="{% static 'thenation/images/li1.png' %}">
+        <p>Linkedin</p>
+      </li>
+
+    </ul>
+  </div>
+
+
+
+
+
+
+  {%endblock%}
+
+
+  {%block js%}
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml15 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 800,
+        delay: function (el, i) {
+          return 800 * i;
+        }
+      }).add({
+        targets: '.ml15',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+  {%endblock%}

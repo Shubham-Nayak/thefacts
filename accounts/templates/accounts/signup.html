@@ -1,0 +1,53 @@
+{%extends "thenation/basic.html"%}
+
+{%block title%}Contact Us{%endblock%}
+
+{%block body%}
+
+{{error}}
+
+<div class="col my-4">
+    <h2 style="text-align:center;">SignUp</h2>
+    <form method="POST" action="" >{% csrf_token %}
+        <div class="form-row ">
+                <div class="form-group col-md-6 mt-6">
+                        <label for="inputname">First Name</label>
+                        <input type="name" class="form-control" id="inputname" placeholder="Firstname" name="firstname" required="required">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputname">Last Name</label>
+                            <input type="name" class="form-control" id="inputname" placeholder="Lastname" name="lastname" required="required">
+                        </div>
+            <div class="form-group col-md-6">
+                <label for="inputname">Username</label>
+                <input type="name" class="form-control" id="inputname" placeholder="Username" name="username" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputname">Email</label>
+                <input type="email" class="form-control" id="inputname" placeholder="Email" name="email" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Password </label>
+                <input type="pass" class="form-control" id="inputEmail4" placeholder="Enter Password" name="pass1" required="required">
+            </div>
+       
+        <div class="form-group col-md-6">
+                <label for="inputEmail4">Re Enter Password </label>
+                <input type="pass" class="form-control" id="inputEmail4" placeholder="Conform Password" name="pass2" required="required">
+            </div>
+            <div class="g-recaptcha" data-sitekey="6Lesb7YUAAAAAB7KhVXWLA4WjE9dF6_9ENDhq8IP"></div>
+        <button type="submit" class="btn btn-primary" id="done" value="Submit" onclick="alerts()">Submit</button>
+    </form>
+</div>
+
+{%endblock%}
+
+{%block js%}
+<script>
+    function alerts{
+        document.getElementById('done').innerHTML=  alert("Form is submited");
+    
+    }
+    
+</script>
+{%endblock%}

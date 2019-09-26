@@ -1,0 +1,38 @@
+{%extends "thenation/basic.html"%}
+
+{%block title%}Contact Us{%endblock%}
+
+{%block body%}
+
+{{error}}
+
+<div class="col my-4">
+    <h2>Login</h2>
+    <form method="POST" action="/accounts/login/" >{% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputname">Name</label>
+                <input type="name" class="form-control" id="inputname" placeholder="name" name="username" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Password </label>
+                <input type="pass" class="form-control" id="inputEmail4" placeholder="password" name="pass" required="required">
+            </div>
+        </div>
+       
+        
+        <button type="submit" class="btn btn-primary" id="done" value="Submit" onclick="alerts()">Submit</button>
+    </form>
+</div>
+
+{%endblock%}
+
+{%block js%}
+<script>
+    function alerts{
+        document.getElementById('done').innerHTML=  alert("Form is submited");
+    
+    }
+    
+</script>
+{%endblock%}

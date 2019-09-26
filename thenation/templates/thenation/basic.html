@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+{%load static%}
+{%block metatags%}{%endblock%}
+<head>
+     <!-- google adds -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-6618016938898558",
+      enable_page_level_ads: true
+    });
+  </script>
+
+
+  <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'}).then(function(token) {
+         ...
+      });
+  });
+  </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Fact's 24 is a news, analysis, opinion and knowledge venture,
+ launched in March 2015 by editor Shubham Singh Nayak.It is sharply focused on politics and policy,
+  government and governance.Our main gole is give factual data and news to our viewers.">
+
+  <meta name="keywords"
+    content="facts24.online,www.facts24.online,thefacts,fact,the fact,thefacts24 online,the facts 24,fact report,indian news,news,thehindu,theprint,the print,the wire,indianews,indianexpress,thefacts24,indian top news portal,indian news site,news,factchecker,fact check,facts,media,facts24,facts24 login,fact24 pricing">
+  <meta name="author" content="John Doe">
+  <meta name="robots" content="index, follow" />
+  <link rel=”canonical” href=”https://www.facts24.online/” />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="% static 'thenation/css/all.css' %}" rel="stylesheet"> 
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+  {%block og%}
+  <!-- og seetings for share post on fb  -->
+  <meta property="og:url" content="http://www.facts24.online/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Facts's 24 " />
+  <meta property="og:description" content="It is sharply focused on politics and policy, government and governance Our main gole is give factual data and news to our viewers." />
+  <meta property="og:image" content="{%static 'thenation/images/index.png' %}" />
+
+  <!--twitter card-->
+  <meta name=”twitter:title” content="The Facts's 24 ">
+
+  <meta name=”twitter:description” content="It is sharply focused on politics and policy, government and governance Our main gole is give factual data and news to our viewers.">
+
+  <meta name=”twitter:image” content="{%static 'thenation/images/index.png' %}" >
+
+  <meta name=”twitter:site” content=”@Shubham19272731>
+
+  <meta name=”twitter:creator” content=”@Shubham19272731>
+  {%endblock%}
+  <title>{%block title%}The Fact's 24 | India's First Fact Checker News Portal{%endblock%}</title>
+  <!-- facebook api cdn -->
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+  <script type='text/javascript'
+    src='https://platform-api.sharethis.com/js/sharethis.js#property=5d3abe4faf24be0012385d05&product='
+    inline-share-buttons' async='async'></script>
+</head>
+{%load static%}
+{%block logo%}
+<link rel="shortcut icon" href="{%static 'thenation/images/logo1.png' %}">
+{%endblock%}
+{%block css%}{%endblock%}
+{% load static %}
+{%block csss%}
+<style>
+  .footer-distributed {
+    background-image: linear-gradient(to right top, #f2b21e, #f5992f, #f2823e, #e86d4c, #d95b58, #d75558, #d54f58, #d34858, #e1494c, #ec4c3e, #f5532b, #fb5d09);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+
+    padding: 45px 50px;
+    margin-top: 80px;
+  }
+
+  .footer-distributed .footer-left p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* Footer links */
+
+  .footer-distributed p.footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-distributed .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
+
+  .footer-distributed .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+  }
+
+  .pagination {
+    text-align: center;
+
+  }
+
+  a {
+    font-size: 22px;
+    color: green
+  }
+
+  .current {
+    color: green;
+    font-weight: 100px;
+
+
+
+    font-size: 15px;
+  }
+
+  .page-link {
+   color: black;
+    padding: 15px 25px;
+  }
+
+  .previous {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-bottom-left-radius: 55px;
+    border-top-left-radius: 55px;
+  }
+
+  .previous:hover {
+    background-color: #CC0033;
+    color: #fff;
+  }
+
+  .next {
+    background-color: rgba(0, 204, 0, 0.7);
+    color: white;
+    border-bottom-right-radius: 55px;
+    border-top-right-radius: 55px;
+  }
+
+  .next:hover {
+    background-color: rgba(0, 153, 51, 1);
+    color: white;
+  }
+
+  .nav-link {
+    font-size: 22px;
+
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+
+  @media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+      text-align: center;
+    }
+
+    .footer-distributed .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links {
+      line-height: 1.8;
+    }
+
+    .pagination {
+      text-align: center;
+      height: 45px;
+    padding: 5px 15px;
+    }
+  
+    a {
+      font-size: 14px;
+      color: green;
+     
+      font-size: 18px;
+    }
+  
+    .current {
+      color: green;
+      font-size:18px;
+      font-weight: 100px;
+  
+  
+      
+  
+    
+    }
+  
+    .page-link {
+     color: black;
+     text-align: center;
+      padding: 1px 15px;
+    }
+  
+    .previous {
+      color: white;
+     padding: 5px;
+      background-color: rgba(255, 0, 0, 0.6);
+      border-bottom-left-radius: 55px;
+      border-top-left-radius: 55px;
+    }
+  
+    .previous:hover {
+      background-color: #CC0033;
+      color: #fff;
+    }
+  
+    .next {
+      justify-content: center;
+      background-color: rgba(0, 204, 0, 0.7);
+      color: white;
+      border-bottom-right-radius: 55px;
+      border-top-right-radius: 55px;
+    }
+  
+    .next:hover {
+      background-color: rgba(0, 153, 51, 1);
+      color: white;
+    }
+  
+    .nav-link {
+      font-size: 22px;
+  
+    }
+
+
+
+  }
+
+  @media only screen and (max-width: 768px) {
+    .title {
+      position: relative;
+      margin-left: 80px;
+
+    }
+
+    .trending,
+    h1 {
+
+      font-size: 22px;
+
+    }
+
+
+  }
+</style>
+
+{%endblock%}
+
+<body>
+  <section class="main-body mb-5">
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-2 "
+        style="background-image: linear-gradient(to right top, #f2b21e, #f5992f, #f2823e, #e86d4c, #d95b58, #d75558, #d54f58, #d34858, #e1494c, #ec4c3e, #f5532b, #fb5d09);">
+        <a class="navbar-brand animation bounceIn title" href="#"><span style="font-size: 30px;font-family:  bold">
+            T</span>he<span style="font-size: 30px;font-family:  bold"> F</span>act's <span
+            style="font-size: 30px;font-family:  bold">24</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">contact us</a>
+            </li>
+           
+
+          </ul>
+
+          <!--<form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>-->
+
+
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    {%block body%}
+
+    <h1>Hello, world!</h1>
+
+
+    {%endblock%}
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+      <a href="#"><img src="{%static 'thenation/images/fb1.png' %}"></a>
+      <a href="#"><img src="{%static 'thenation/images/li1.png' %}"></a>
+      <a href="#"><img src="{%static 'thenation/images/tw1.png' %}"></a>
+
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a href="/thenation/">Home</a>
+        ·
+
+
+
+
+        <a href="/thenation/about/">About</a>
+
+
+        ·
+        <a href="/thenation/contact/">Contact</a>
+      </p>
+
+      <p>The News Nation &copy; 2015</p>
+    </div>
+
+  </footer>
+
+  {%block js%}
+  <script></script>
+  {%endblock%}
+</body>
+
+</html>
