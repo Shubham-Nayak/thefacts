@@ -81,3 +81,13 @@ class BrekingNews(models.Model):
 
     def __str__(self):
         return self.title
+
+class Music(models.Model):
+    msg_id=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=50)
+    email=models.CharField(max_length=300)
+    phone=models.IntegerField(default=0)    
+    query=models.CharField(max_length=50,default="")
+    
+    def __str__(self):
+        return self.name
